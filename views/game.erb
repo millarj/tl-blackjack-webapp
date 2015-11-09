@@ -6,9 +6,9 @@
     <div class="alert alert-success"><%=@winner%></div>
   <% end %>
 
-  <h1>Blackjack!</h1>
+  <h1>Let's play blackjack!</h1>
 
-  <p>Welcome <%= session[:player_name] %>.</p>
+  <h4>Good luck, <%= session[:player_name] %>.</h4>
 
   <% if @play_again %>
     <p>
@@ -40,7 +40,7 @@
   </div>
 
   <div class="well" id="player_cards">
-    <h4>Player's Cards:</h4>
+    <h4><%= session[:player_name] %>'s Cards:</h4>
       <% session[:player_cards].each do |card| %>
       <%= card_image(card) %>
       <% end %>
@@ -50,9 +50,9 @@
   </div>
 
 
-
-  <p>What would <%= session[:player_name] %> like to do?</p>
-  <p><%= session[:player_name] %> has <%= calculate_total(session[:player_cards]) %></p>
+  <h4><%= session[:player_name] %> has a card total of <%= calculate_total(session[:player_cards]) %></h4>
+  <h4>What would <%= session[:player_name] %> like to do?</h4>
+  
 
     <% if @show_hit_or_stay_buttons %>
       <form id="hit_form" action="/game/player/hit" method="post">

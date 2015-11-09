@@ -1,3 +1,15 @@
+.nav {
+  font-size: 1.4em;
+  padding-left: 5.0em;
+}
+
+
+body {
+  padding-top: 65px;
+}
+
+
+
 form#hit_form {
   float: left;
   margin-right: 20px;
